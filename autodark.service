@@ -1,0 +1,9 @@
+[Unit]
+Description=Time-based automatic theme change
+
+[Service]
+Restart=on-failure
+ExecStart=/home/$USER/.autodark.sh
+
+[Install]
+WantedBy=default.target

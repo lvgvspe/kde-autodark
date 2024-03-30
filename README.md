@@ -1,7 +1,9 @@
 # kde-autodark
 > Enabling time-based automatic theme change
 
-Must change $USER variable to your username at autodark.service, and also appropriately change the path to your `.autodark.sh` file.
+Must change $USER variable to your username at autodark.service, and also appropriately change the path to your `.autodark.sh` file, and give it the execute permission with
+
+    sudo chmod +x /path/to/.autodark.sh
 
 Also must change `.autodark.sh` and replace `17:30` and `05:30` with the time to activate dark and light themes respectively.
 

@@ -16,16 +16,16 @@ There’s however, a clean way to proxy out these hooks from the system to the u
 
 `/etc/systemd/system/suspend@.service`
       
-      [Unit]
-      Description=Call user's suspend target after system suspend
-      After=suspend.target
-      
-      [Service]
-      Type=oneshot
-      ExecStart=/usr/bin/systemctl --user --machine=%i@ start --wait suspend.target
-      
-      [Install]
-      WantedBy=suspend.target
+    [Unit]
+    Description=Call user's suspend target after system suspend
+    After=suspend.target
+
+    [Service]
+    Type=oneshot
+    ExecStart=/usr/bin/systemctl --user --machine=%i@ start --wait suspend.targe
+
+    [Install]
+    WantedBy=suspend.target
 
 Enable it by running `sudo systemctl daemon-reload && sudo systemctl enable suspend@$(whoami)`
 
@@ -33,11 +33,11 @@ Now we’ll create a new user target that activates all needed user services:
       
 `~/.config/systemd/user/suspend.target`
       
-      [Unit]
-      Description=User level suspend target
-      StopWhenUnneeded=yes
-      Wants=alert-me.service
-      Wants=send-me-some-email.service
+    [Unit]
+    Description=User level suspend target
+    StopWhenUnneeded=yes
+    Wants=alert-me.service
+    Wants=send-me-some-email.service
 
 Notice that there’s already a few example service specification as dependency on `Wants. You can declare as many as you want, as long as they’re user units.
 

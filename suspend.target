@@ -1,0 +1,7 @@
+[Unit]
+Description=User level suspend target
+StopWhenUnneeded=yes
+Wants=alert-me.service
+Wants=send-me-some-email.service
+Wants=autodark.service
+Wants=resumedark.service

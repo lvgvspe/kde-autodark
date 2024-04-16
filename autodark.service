@@ -3,7 +3,7 @@ Description=Time-based automatic theme change
 
 [Service]
 Restart=on-failure
-ExecStart=/home/$USER/.autodark.sh
+ExecStart=/home/lucas/repos/kde-autodark/.autodark.sh
 
 [Install]
 WantedBy=default.target

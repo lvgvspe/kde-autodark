@@ -1,0 +1,6 @@
+Package: autodark
+Version: 0.1alpha-1
+Architecture: all
+Maintainer: Lucas <lucas.camargobatista@icloud.com>
+Description: KDE Autodark
+ Time-based automatic theme change

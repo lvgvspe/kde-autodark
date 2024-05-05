@@ -1,0 +1,15 @@
+export USERNAME=lucas
+cd /usr/local/bin/autodark
+chmod +x .autodark.sh
+sudo cp autodark.service /etc/systemd/user
+sudo cp resumedark.service /etc/systemd/user
+sudo cp suspend@.service /etc/systemd/system
+sudo systemctl daemon-reload
+sudo systemctl enable suspend@$USERNAME
+mkdir -p ~/.config/systemd/user
+cp suspend.target ~/.config/systemd/user
+systemctl --user --machine=$USERNAME@ daemon-reload
+systemctl --user --machine=$USERNAME@ enable autodark
+systemctl --user --machine=$USERNAME@ enable resumedark
+systemctl --user --machine=$USERNAME@ start autodark
+systemctl --user --machine=$USERNAME@ start resumedark

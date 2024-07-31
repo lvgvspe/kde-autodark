@@ -1,5 +1,6 @@
 [Unit]
 Description=Time-based automatic theme change
+After=display-manager.service
 
 [Service]
 Restart=on-failure

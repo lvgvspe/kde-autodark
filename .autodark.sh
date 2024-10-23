@@ -6,7 +6,7 @@ while true; do
         now=$(date +"%s")
         if [ $now -gt $darktime ]; then
                 /usr/bin/lookandfeeltool -a 'org.kde.breezedark.desktop'
-                sec=$(( $(date -d "23:59:59" +"%s") - $now ))
+                sec=3600
                 sectotime=$(date -u -d @${sec} +"%Hh%Mm%Ss")
                 echo "Sleeping for $sectotime"
                 sleep $sec

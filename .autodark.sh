@@ -2,7 +2,7 @@
 set -e
 while true; do
 	darktime=$(date -d "17:30" +"%s")
-	littime=$(date -d "05:30" +"%s")
+	littime=$(date -d "06:30" +"%s")
         now=$(date +"%s")
         if [ $now -gt $darktime ]; then
                 /usr/bin/lookandfeeltool -a 'org.kde.breezedark.desktop'

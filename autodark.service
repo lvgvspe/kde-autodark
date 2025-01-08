@@ -1,9 +1,12 @@
 [Unit]
 Description=Time-based automatic theme change
 After=display-manager.service
+StartLimitInterval=200
+StartLimitBurst=10
 
 [Service]
 Restart=on-failure
+RestartSec=30
 ExecStart=/home/lucas/repos/kde-autodark/.autodark.sh
 
 [Install]

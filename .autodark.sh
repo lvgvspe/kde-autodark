@@ -10,7 +10,7 @@ while true; do
         if [ $now -ge $darktime ]; then
             # Se for depois das 17:30, calcular até 23:59:59 do mesmo dia
             sec=$(( $(date -d "23:59:59" +"%s") - $now ))
-            if [ $sec -le 0 ]; then
+            if [ $sec -le 10 ]; then
                 # Se já passou de 23:59:59, calcular até 06:30 do próximo dia
                 sec=$(( $(date -d "tomorrow 06:30" +"%s") - $now ))
             fi
@@ -25,11 +25,11 @@ while true; do
     fi
 
     # Garantir que sec seja positivo
-    if [ $sec -le 0 ]; then
-        sec=1
+    if [ $sec -le 10 ]; then
+        sec=10
     fi
 
-    sectotime=$(date -u -d @${sec} +"%Hh%Mm%Ss" || echo "00h00m01s")
+    sectotime=$(date -u -d @${sec} +"%Hh%Mm%Ss" || echo "00h00m10s")
     echo "Sleeping for $sectotime"
     sleep $sec
 done
